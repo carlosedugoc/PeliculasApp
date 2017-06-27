@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styles: []
 })
 export class NavComponent implements OnInit {
-
+  public buscar:String;
   constructor() { }
 
   ngOnInit() {

@@ -13,16 +13,15 @@ export class BusquedaComponent implements OnInit {
               private activatedRoute:ActivatedRoute) { }
 
   ngOnInit() {
-  }
-
-  onclick(){
     this.getPelicula();
   }
 
   getPelicula(){
-    this.peliculaService.buscarPelicula(this.texto).subscribe(peliculas =>{
-      console.log(peliculas);
-    });
-  }
+    this.activatedRoute.params.subscribe(params => {
+      this.peliculaService.buscarPelicula(params['texto']).subscribe(peliculas =>{
+        console.log(peliculas);
+      });
+    })
 
+  }
 }
