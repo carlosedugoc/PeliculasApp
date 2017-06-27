@@ -1,0 +1,13 @@
+
+
+ <div class="card-columns">
+      <div class="card animated fadeIn fast"*ngFor="let pelicula of cartelera; let i = index">
+        <img class="card-img-top img-fluid" src= "{{ urlImage + pelicula.poster_path }}" [alt]="pelicula.title">
+        <div class="card-block">
+          <h4 class="card-title">{{ pelicula.title }}</h4>
+          <p class="card-text"> {{ pelicula.overview }}</p>
+          <p class="card-text"><small class="text-muted">{{ pelicula.release_date }}</small></p>
+          <a [routerLink] = "['/pelicula',pelicula.id]" class="btn btn-outline-primary btn-block">Ver más</a>
+        </div>
+      </div>
+    </div>
