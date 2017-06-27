@@ -1,0 +1,12 @@
+
+
+  <div *ngIf="peliculas">
+    {{titulo}}
+
+    <div class="card-columns">
+      <div class="card animated fadeIn fast"*ngFor="let pelicula of peliculas; let i = index">
+        <img [routerLink] = "['/pelicula',pelicula.id]" class="card-img-top img-fluid" src= "{{ pelicula | peliculaImagen }}" [alt]="peliculas.title">
+      </div>
+    </div>
+
+  </div>

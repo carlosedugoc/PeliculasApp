@@ -1,4 +1,5 @@
-<!--
+
+
 <div class="jumbotron jumbotron-fluid">
   <div class="container">
     <h1 class="display-3">Pelicular APP</h1>
@@ -11,57 +12,17 @@
   <div class="row">
     <h1>Cartelera</h1>
     <hr>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="row">
-          <div class="col-md-12 div-pic-1" [ngStyle]="{background-image: 'url()'}">
-            
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        fasdf
-      </div>
+    <div class="alert alert-info" role="alert">
+      <app-galeria 
+          [peliculas]="cartelera | slice:0:6"
+          titulo = "Películas en Cartelera"></app-galeria>
     </div>
-  </div>
-</div>-->
-
-
-
-<div style="margin-top:30px" class="alert alert-info" role="alert">
-
-  <div class="alert alert-success" role="alert">
-    PELICULAS EN CARTELERA
-
-    <div class="card-columns">
-      <div class="card animated fadeIn fast"*ngFor="let pelicula of cartelera; let i = index">
-        <img [routerLink] = "['/pelicula',pelicula.id]" class="card-img-top img-fluid" src= "{{ urlImage + pelicula.poster_path }}" [alt]="pelicula.title">
+      <div class="alert alert-warning" role="alert">
+      <app-galeria 
+          [peliculas]="peliculas | slice:0:6"
+          titulo = "Películas Populares"></app-galeria>
       </div>
-    </div>
 
   </div>
-
-  <div class="alert alert-danger" role="alert">
-    PELICULAS POPULARES
-
-
-    <div class="card-columns">
-      <div class="card animated fadeIn fast"*ngFor="let pelicula of peliculas; let i = index">
-        <img class="card-img-top img-fluid" src= "{{ urlImage + pelicula.poster_path }}" [alt]="pelicula.title">
-        <div class="card-block">
-          <h4 class="card-title">{{ pelicula.title }}</h4>
-          <p class="card-text"> {{ pelicula.overview }}</p>
-          <p class="card-text"><small class="text-muted">{{ pelicula.release_date }}</small></p>
-          <a [routerLink] = "['/pelicula',pelicula.id]" class="btn btn-outline-primary btn-block">Ver más</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="alert alert-warning" role="alert">
-    PELICULAS PARA NIÑOS
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-
 </div>
+
