@@ -36,9 +36,6 @@
     <div class="card-columns">
       <div class="card animated fadeIn fast"*ngFor="let pelicula of cartelera; let i = index">
         <img [routerLink] = "['/pelicula',pelicula.id]" class="card-img-top img-fluid" src= "{{ urlImage + pelicula.poster_path }}" [alt]="pelicula.title">
-        <!--<div class="card-block">
-          <a [routerLink] = "['/pelicula',pelicula.id]" class="btn btn-outline-primary btn-block">Ver más</a>
-        </div>-->
       </div>
     </div>
 
