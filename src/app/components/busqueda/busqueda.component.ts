@@ -9,6 +9,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class BusquedaComponent implements OnInit {
   public texto:string;
+  public peliculas = [];
   constructor(private peliculaService:PeliculasService,
               private activatedRoute:ActivatedRoute) { }
 
@@ -19,6 +20,7 @@ export class BusquedaComponent implements OnInit {
   getPelicula(){
     this.activatedRoute.params.subscribe(params => {
       this.peliculaService.buscarPelicula(params['texto']).subscribe(peliculas =>{
+        this.peliculas = peliculas;
         console.log(peliculas);
       });
     })

@@ -42,7 +42,7 @@ export class PeliculasService {
     let url = `${ this.urlMoviedb }/search/movie?query=${ texto }&sort_by=popularity.desc&api_key=${ this.apikey }&language=es&callback=JSONP_CALLBACK`;
 console.log(url)
     return this.jsonp.get( url )
-                .map( res=> res.json());
+                .map( res=> res.json().results);
   }
 
     getDetalle( id:string ){
